@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row cart">
+            <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+        </div>
+        
+        <button type="addNewProduct" name="addNewProduct" id="addNewProduct">Add New Product</button>
+
+        <div class="row product">
+                <div class="col col-md-3 text-center pro-item">
+                    <img src="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" alt="">
+                    <div class="content">
+                        <span class="name">Balo mới 1</span>
+                        <span class="price">800</span>
+                        <div class="button">
+                            <button class="btn btn-danger my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="800" data-quantity="1" data-image="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" >Add to Cart</button>
+                            <button>Details</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="col col-md-3 text-center pro-item">
+                <img src="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" alt="">
+                <div class="content">
+                    <span class="name">Balo mới 1</span>
+                    <span class="price">800</span>
+                    <div class="button">
+                        <button class="btn btn-danger my-cart-btn" data-id="2" data-name="product 2" data-summary="summary 2" data-price="800" data-quantity="1" data-image="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" >Add to Cart</button>
+                        <button>Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 text-center pro-item">
+                <img src="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" alt="">
+                <div class="content">
+                    <span class="name">Balo mới 1</span>
+                    <span class="price">800</span>
+                    <div class="button">
+                        <button class="btn btn-danger my-cart-btn" data-id="3" data-name="product 3" data-summary="summary 3" data-price="800" data-quantity="1" data-image="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" >Add to Cart</button>
+                        <button>Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 text-center pro-item">
+                <img src="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" alt="">
+                <div class="content">
+                    <span class="name">Balo mới 1</span>
+                    <span class="price">800</span>
+                    <div class="button">
+                        <button class="btn btn-danger my-cart-btn" data-id="4" data-name="product 4" data-summary="summary 4" data-price="800" data-quantity="1" data-image="https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg" >Add to Cart</button>
+                        <button>Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="jquery.mycart.js"></script>
+    <script src="jquery.mycart.min.js"></script>
+   <script src="index.js"></script>
+   <script type="text/javascript">
+    $(function () {
+  
+      var goToCartIcon = function($addTocartBtn){
+        var $cartIcon = $(".my-cart-icon");
+        var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+        $addTocartBtn.prepend($image);
+        var position = $cartIcon.position();
+        $image.animate({
+          top: position.top,
+          left: position.left
+        }, 500 , "linear", function() {
+          $image.remove();
+        });
+      }
+  
+      $('.my-cart-btn').myCart({
+        currencySymbol: '$',
+        classCartIcon: 'my-cart-icon',
+        classCartBadge: 'my-cart-badge',
+        classProductQuantity: 'my-product-quantity',
+        classProductRemove: 'my-product-remove',
+        classCheckoutCart: 'my-cart-checkout',
+        affixCartIcon: true,
+        showCheckoutModal: true,
+        numberOfDecimals: 2,
+        cartItems: [
+          {id: 1, name: 'product 1', summary: 'summary 1', price: 800, quantity: 1, image: 'https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg'},
+          {id: 2, name: 'product 2', summary: 'summary 2', price: 800, quantity: 1, image: 'https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg'},
+          {id: 3, name: 'product 3', summary: 'summary 3', price: 800, quantity: 1, image: 'https://www.vascara.com/uploads/cms_productmedia/2022/July/18/bac-0164-dog--2-__64653__1658111892-medium@2x.jpg'}
+        ],
+        clickOnAddToCart: function($addTocart){
+          goToCartIcon($addTocart);
+        },
+        afterAddOnCart: function(products, totalPrice, totalQuantity) {
+          console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+        },
+        clickOnCartIcon: function($cartIcon, products, totalPrice, totalQuantity) {
+          console.log("cart icon clicked", $cartIcon, products, totalPrice, totalQuantity);
+        },
+        checkoutCart: function(products, totalPrice, totalQuantity) {
+          var checkoutString = "Total Price: " + totalPrice + "\nTotal Quantity: " + totalQuantity;
+          checkoutString += "\n\n id \t name \t summary \t price \t quantity \t image path";
+          $.each(products, function(){
+            checkoutString += ("\n " + this.id + " \t " + this.name + " \t " + this.summary + " \t " + this.price + " \t " + this.quantity + " \t " + this.image);
+          });
+          alert(checkoutString)
+          console.log("checking out", products, totalPrice, totalQuantity);
+        },
+        getDiscountPrice: function(products, totalPrice, totalQuantity) {
+          console.log("calculating discount", products, totalPrice, totalQuantity);
+          return totalPrice * 0.5;
+        }
+      });
+  
+      $("#addNewProduct").click(function(event) {
+        var currentElementNo = $(".row").children().length + 1;
+        $(".row").append('<div class="col-md-3 text-center"><img src="images/img_empty.png" width="150px" height="150px"><br>product ' + currentElementNo + ' - <strong>$' + currentElementNo + '</strong><br><button class="btn btn-danger my-cart-btn" data-id="' + currentElementNo + '" data-name="product ' + currentElementNo + '" data-summary="summary ' + currentElementNo + '" data-price="' + currentElementNo + '" data-quantity="1" data-image="images/img_empty.png">Add to Cart</button><a href="#" class="btn btn-info">Details</a></div>')
+      });
+    });
+    </script>
+
+</body>
+</html>

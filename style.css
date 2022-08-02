@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 1500px;
+    background-color: rgb(128, 183, 183);
+}
+
+.cart{
+    height: 100px;
+    padding: 20px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: rgb(204, 17, 17);
+    font-weight: 700;
+    font-size: large;
+}
+
+.cart span {
+    font-size: 50px;
+}
+
+.product {
+    display: flex;
+    margin-top: 30px;
+}
+
+.pro-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    
+}
+
+.pro-item:hover{
+    border: 1px solid rgb(244, 9, 9);
+    border-radius: 10px;
+    background-color: rgb(125, 129, 128);
+}
+
+.pro-item .content {
+    padding: 12px 10px 20px;
+    width: 264px;
+    background-color: rgba(199, 200, 192, 0.982);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.pro-item img {
+    width: 90%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.pro-item .name {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+    height: 50px;
+    color: rgb(244, 9, 9);
+}
+
+.pro-item .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(239, 10, 132);
+    margin-left: 90px;
+}
+
+.pro-item button {
+    outline: none;
+    padding: 5px 0 5px ;
+    width: 120px;
+    background-color: transparent;
+    border: 1px solid wheat;
+    color: crimson;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.pro-item button:first-child {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+} 
+
+.pro-item button:first-child:hover {
+    font-size: 18px;
+}
+
+.pro-item button:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+} 
+
+.pro-item button:last-child:hover {
+    background-color: crimson;
+    color: #fff;
+} 
+
+.badge-notify{
+    background:red;
+    position:relative;
+    top: -20px;
+    right: 10px;
+  }
+  .my-cart-icon-affix {
+    position: fixed;
+    z-index: 999;
+  }
